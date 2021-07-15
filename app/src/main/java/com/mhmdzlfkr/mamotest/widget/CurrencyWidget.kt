@@ -28,7 +28,7 @@ class CurrencyWidget @JvmOverloads constructor(
     private var amount = ""
         set(value) {
             field = value
-            binding.tvAmount.text = field
+            binding.tvAmount.text = util.formatAmount(field)
         }
 
     private var firstDecimalAmount = ""
