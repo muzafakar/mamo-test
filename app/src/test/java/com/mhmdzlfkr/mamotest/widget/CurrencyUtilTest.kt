@@ -1,7 +1,7 @@
 package com.mhmdzlfkr.mamotest.widget
 
 import org.hamcrest.core.Is.`is`
-import org.junit.Assert.*
+import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Test
 
@@ -14,7 +14,7 @@ class CurrencyUtilTest {
         currencyUtil = CurrencyUtil()
     }
 
-    // isDecimalStringValid()
+    // isDecimalStringValid() test cases
 
     @Test
     fun isDecimalStringValid_halfDecimalAmount_returnsValid() {
@@ -100,6 +100,8 @@ class CurrencyUtilTest {
         assertThat(result, `is`(false))
     }
 
+    // formatAmount() test cases
+
     @Test
     fun formatAmount_emptyAmount_returnValidFormat() {
         val input = ""
@@ -107,6 +109,7 @@ class CurrencyUtilTest {
         val result = currencyUtil.formatAmount(input)
         assertThat(result, `is`(expected))
     }
+
     @Test
     fun formatAmount_singleAmount_returnValidFormat() {
         val input = "1"
@@ -144,6 +147,48 @@ class CurrencyUtilTest {
         val input = "12345"
         val expected = "12,345"
         val result = currencyUtil.formatAmount(input)
+        assertThat(result, `is`(expected))
+    }
+
+    // getDoubleAmount() test cases
+
+    @Test
+    fun getDoubleAmount_amountAndNoDecimal_returnValidValue() {
+        val amount = "1234"
+        val firstDecimal = ""
+        val secondDecimal = ""
+        val expected = 1234.0
+        val result = currencyUtil.getDoubleAmount(amount, firstDecimal + secondDecimal)
+        assertThat(result, `is`(expected))
+    }
+
+    @Test
+    fun getDoubleAmount_amountAndHalfDecimal_returnValidValue() {
+        val amount = "1234"
+        val firstDecimal = "8"
+        val secondDecimal = ""
+        val expected = 1234.8
+        val result = currencyUtil.getDoubleAmount(amount, firstDecimal + secondDecimal)
+        assertThat(result, `is`(expected))
+    }
+
+    @Test
+    fun getDoubleAmount_amountAndFullDecimal_returnValidValue() {
+        val amount = "1234"
+        val firstDecimal = "8"
+        val secondDecimal = "8"
+        val expected = 1234.88
+        val result = currencyUtil.getDoubleAmount(amount, firstDecimal + secondDecimal)
+        assertThat(result, `is`(expected))
+    }
+
+    @Test
+    fun getDoubleAmount_amountAndFullZeroDecimal_returnValidValue() {
+        val amount = "1234"
+        val firstDecimal = "8"
+        val secondDecimal = "0"
+        val expected = 1234.80
+        val result = currencyUtil.getDoubleAmount(amount, firstDecimal + secondDecimal)
         assertThat(result, `is`(expected))
     }
 }

@@ -17,15 +17,15 @@ class CurrencyWidget @JvmOverloads constructor(
     private val util = CurrencyUtil()
 
 
+    private var expression = ""
     private var tempExpression = ""
         set(value) {
             field = value
             evaluateExpression()
         }
 
-    private var expression = ""
 
-    private var amount = ""
+    private var amountStr = ""
         set(value) {
             field = value
             binding.tvAmount.text = util.formatAmount(field)
@@ -42,6 +42,9 @@ class CurrencyWidget @JvmOverloads constructor(
             field = value
             binding.tvDecAmountSecond.text = field
         }
+
+    val amount: Double
+        get() = util.getDoubleAmount(amountStr, firstDecimalAmount + secondDecimalAmount)
 
     init {
         setupView()
@@ -84,7 +87,7 @@ class CurrencyWidget @JvmOverloads constructor(
 
             // to normal and decimal amount
             val amounts = tempExpression.split(AppConst.DOT)
-            amount = amounts[0]
+            amountStr = amounts[0]
             firstDecimalAmount = (amounts[1].getOrNull(0) ?: "").toString()
             secondDecimalAmount = (amounts[1].getOrNull(1) ?: "").toString()
 
@@ -92,7 +95,7 @@ class CurrencyWidget @JvmOverloads constructor(
             expression = tempExpression
         } else {
             binding.tvDecSign.text = ""
-            amount = tempExpression
+            amountStr = tempExpression
             expression = tempExpression
         }
     }

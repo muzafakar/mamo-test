@@ -20,4 +20,8 @@ class CurrencyUtil {
         val formatter = DecimalFormat(decimalPattern, DecimalFormatSymbols.getInstance(Locale.getDefault()))
         return formatter.format(amount)
     }
+
+    fun getDoubleAmount(amountStr: String, decimalAmountStr: String): Double {
+        return (amountStr + AppConst.DOT + decimalAmountStr).toDoubleOrNull() ?: 0.0
+    }
 }
