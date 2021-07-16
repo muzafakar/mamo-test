@@ -8,4 +8,7 @@
     <color name="black">#000000</color>
     <color name="grey">#9E9E9E</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <color name="hawkeyes_blue">#EEF2FE</color>
+    <color name="royal_blue">#3650F5</color>
 </resources>
