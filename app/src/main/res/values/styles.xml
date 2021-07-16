@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CurrencyText">
+        <item name="android:textSize">32sp</item>
+        <item name="hintTextColor">@color/grey</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="KeyboardButton">
+        <item name="android:layout_width">@dimen/keyboard_key_size</item>
+        <item name="android:layout_height">@dimen/keyboard_key_size</item>
+        <item name="android:layout_marginTop">@dimen/keyboard_key_margin</item>
+        <item name="rippleColor">@color/purple_200</item>
+        <item name="android:gravity">center</item>
+        <item name="layout_constraintDimensionRatio">W, 1:1</item>
+    </style>
+
+</resources>
