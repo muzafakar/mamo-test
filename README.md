@@ -1,3 +1,3 @@
 # mamo-test
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](test_video.mp4)
+[![Demo CountPages alpha](https://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
 
