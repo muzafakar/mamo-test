@@ -43,7 +43,7 @@ class CurrencyWidget @JvmOverloads constructor(
             binding.tvDecAmountSecond.text = field
         }
 
-    // mutable variable to get the inputted value as Double 😉
+    // immutable variable to get the inputted value as Double 😉
     val amount: Double
         get() = util.getDoubleAmount(amountStr, firstDecimalAmount + secondDecimalAmount)
 
@@ -68,8 +68,11 @@ class CurrencyWidget @JvmOverloads constructor(
     }
 
     fun appendExpression(s: String) {
-        // to prevent user from inputting zero-leading
-        if ((s == DOT || s == "0") && tempExpression.isEmpty()) return
+        // to handle < 1 AED input (e.g. 0.85)
+        if ((s == DOT || s == "0") && tempExpression.isEmpty()) {
+            tempExpression += "0."
+            return
+        }
 
         // to prevent user from inputting multiple dot
         if (expression.contains(DOT) && s == DOT) return
@@ -98,11 +101,16 @@ class CurrencyWidget @JvmOverloads constructor(
         } else {
             binding.tvDecSign.text = ""
             amountStr = tempExpression
+            firstDecimalAmount = ""
+            secondDecimalAmount = ""
             expression = tempExpression
         }
+
+        if (tempExpression == EMPTY_VALUE) tempExpression = ""
     }
     
     companion object{
         const val DOT = "."
+        const val EMPTY_VALUE = "0.00"
     }
 }

@@ -9,8 +9,6 @@ P
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 L
 .idea/codeStyles/Project.xml,6/e/6ecd6000a7b6f4a2884412ff19f74193ed089648
-s
-Capp/src/test/java/com/mhmdzlfkr/mamotest/widget/CurrencyUtilTest.kt,4/c/4cd7d3b7ff2bfda1c2e1faf3a1087b1541e9f7cc
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
