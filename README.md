@@ -39,7 +39,7 @@ val moneyAmount : Double = binding.currencyWidget.amount
 ### Things to improve
 * Ripple color is not exactly as in the Requirement Video.
 * Keyboard can be extracted to custom view for reusability. 
-* In-widget calculator functions can be integrated to Keyboard (user can easily doing calculator operation while inputting amount).
+* In-widget calculator functions can be integrated to Keyboard (user can easily doing calculation while inputting amount directly from custom keyboard).
 
 
 
