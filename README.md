@@ -2,7 +2,7 @@
 
 ## Video
 |Requirement|Result|
-|![Requirement video](requirement_video.gif)|[Result](result_video.gif)|
+|![Requirement video](requirement_video.gif)|![Result](result_video.gif)|
 
 
 ### Custom Widget
