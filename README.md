@@ -2,6 +2,7 @@
 
 ## Video
 |Requirement|Result|
+|---|---
 |![Requirement video](requirement_video.gif)|![Result](result_video.gif)|
 
 
@@ -36,9 +37,9 @@ val moneyAmount = binding.currencyWidget.amount
 * Clear entire amount when long press on backspace button.
 
 ### Things to improve
-* Ripple color is not exactly as in the Requirement Video
-* Keyboard can be extracted to custom view for reusability 
-* In-widget calculator functions can be integrated to Keyboard (user can easily doing calculator operation while inputting amount)
+* Ripple color is not exactly as in the Requirement Video.
+* Keyboard can be extracted to custom view for reusability. 
+* In-widget calculator functions can be integrated to Keyboard (user can easily doing calculator operation while inputting amount).
 
 
 
