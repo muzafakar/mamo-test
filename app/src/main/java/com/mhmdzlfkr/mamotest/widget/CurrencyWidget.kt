@@ -43,6 +43,7 @@ class CurrencyWidget @JvmOverloads constructor(
             binding.tvDecAmountSecond.text = field
         }
 
+    // mutable variable to get the inputted value as Double 😉
     val amount: Double
         get() = util.getDoubleAmount(amountStr, firstDecimalAmount + secondDecimalAmount)
 
