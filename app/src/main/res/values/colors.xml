@@ -3,12 +3,13 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_200">#F00</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#000000</color>
     <color name="grey">#9E9E9E</color>
     <color name="white">#FFFFFFFF</color>
     
     <color name="hawkeyes_blue">#EEF2FE</color>
-    <color name="royal_blue">#3650F5</color>
+    <color name="blue_ribbon">#2D3FF5</color>
+    <color name="dark_blue">#0015c1</color>
 </resources>
