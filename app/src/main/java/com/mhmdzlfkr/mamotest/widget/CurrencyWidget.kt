@@ -108,7 +108,11 @@ class CurrencyWidget @JvmOverloads constructor(
 
         if (tempExpression == EMPTY_VALUE) tempExpression = ""
     }
-    
+
+    fun clearExpression() {
+        tempExpression = ""
+    }
+
     companion object{
         const val DOT = "."
         const val EMPTY_VALUE = "0.00"

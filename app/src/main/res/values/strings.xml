@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mamo Test</string>
+    <string name="static_currency">AED</string>
 </resources>

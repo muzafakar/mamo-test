@@ -1,7 +1,6 @@
 package com.mhmdzlfkr.mamotest
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.mhmdzlfkr.mamotest.databinding.ActivityMainBinding
@@ -25,8 +24,14 @@ class MainActivity : AppCompatActivity() {
             listenKeyClick(keyboard.btn9)
             listenKeyClick(keyboard.btn0)
             listenKeyClick(keyboard.btnDot)
-            keyboard.btnBackspace.setOnClickListener {
-                currencyWidget.truncateExpression()
+
+            keyboard.btnBackspace.apply {
+                setOnClickListener { currencyWidget.truncateExpression() }
+
+                setOnLongClickListener {
+                    currencyWidget.clearExpression()
+                    true
+                }
             }
         }
 

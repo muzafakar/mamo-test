@@ -2,7 +2,7 @@
 <resources>
 
     <style name="CurrencyText">
-        <item name="android:textSize">32sp</item>
+        <item name="android:textSize">38sp</item>
         <item name="hintTextColor">@color/grey</item>
         <item name="android:textColor">@color/black</item>
     </style>
