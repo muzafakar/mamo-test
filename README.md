@@ -1,4 +1,4 @@
 # mamo-test
-## Expected result
+### Expected result
 ![Test video](test_video.gif)
 

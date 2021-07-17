@@ -68,9 +68,10 @@ class CurrencyWidget @JvmOverloads constructor(
 
     fun appendExpression(s: String) {
         // to prevent user from inputting zero-leading
-        if ((s == AppConst.DOT || s == "0") && tempExpression.isEmpty()) {
-            return
-        }
+        if ((s == DOT || s == "0") && tempExpression.isEmpty()) return
+
+        // to prevent user from inputting multiple dot
+        if (expression.contains(DOT) && s == DOT) return
 
         tempExpression += s
     }
@@ -80,23 +81,27 @@ class CurrencyWidget @JvmOverloads constructor(
     }
 
     private fun evaluateExpression() {
-        if (tempExpression.contains(AppConst.DOT)) {
+        if (tempExpression.contains(DOT)) {
             // to preserve decimal format
             val isValid = util.isDecimalStringValid(tempExpression)
             if (!isValid) return
 
             // to normal and decimal amount
-            val amounts = tempExpression.split(AppConst.DOT)
+            val amounts = tempExpression.split(DOT)
             amountStr = amounts[0]
             firstDecimalAmount = (amounts[1].getOrNull(0) ?: "").toString()
             secondDecimalAmount = (amounts[1].getOrNull(1) ?: "").toString()
 
-            binding.tvDecSign.text = AppConst.DOT
+            binding.tvDecSign.text = DOT
             expression = tempExpression
         } else {
             binding.tvDecSign.text = ""
             amountStr = tempExpression
             expression = tempExpression
         }
+    }
+    
+    companion object{
+        const val DOT = "."
     }
 }

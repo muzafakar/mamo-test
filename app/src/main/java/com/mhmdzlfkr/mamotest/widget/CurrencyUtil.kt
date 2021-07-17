@@ -11,7 +11,7 @@ class CurrencyUtil {
     }
 
     fun isDecimalStringValid(expression: String): Boolean {
-        val dotCount = expression.count { it.toString() == AppConst.DOT }
+        val dotCount = expression.count { it.toString() == CurrencyWidget.DOT }
         return Regex(regexPattern).matches(expression) && dotCount == 1
     }
 
@@ -22,6 +22,6 @@ class CurrencyUtil {
     }
 
     fun getDoubleAmount(amountStr: String, decimalAmountStr: String): Double {
-        return (amountStr + AppConst.DOT + decimalAmountStr).toDoubleOrNull() ?: 0.0
+        return (amountStr + CurrencyWidget.DOT + decimalAmountStr).toDoubleOrNull() ?: 0.0
     }
 }
