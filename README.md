@@ -33,7 +33,7 @@ val moneyAmount : Double = binding.currencyWidget.amount
 ```
 
 ### Added case
-* Handle amount less than 1AED (e.g. 0.85 AED) when tap on either "0" or "." at first.
+* Handle amount less than 1AED (e.g. 0.85 AED) when tapping on either "0" or "." button at first.
 * Clear entire amount when long press on backspace button.
 
 ### Things to improve
