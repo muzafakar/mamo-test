@@ -29,7 +29,7 @@ setOnClickListener { currencyWidget.truncateExpression() }
 
 ***Getting the final amount***
 ```kotlin
-val moneyAmount = binding.currencyWidget.amount
+val moneyAmount : Double = binding.currencyWidget.amount
 ```
 
 ### Added case
